@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 
+  def authorize
+    redirect_to start_url, alert: "Not authorize" if current_user.nil?
+  end
+
   private
 
   def current_user

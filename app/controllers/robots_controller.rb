@@ -1,6 +1,8 @@
 class RobotsController < ApplicationController
 
   
+  before_filter :authorize
+
   before_action :locking
 
 
@@ -65,7 +67,8 @@ class RobotsController < ApplicationController
     redirect_to robots_path
   end
 
-
+  def start
+  end
 
 private
 

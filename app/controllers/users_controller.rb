@@ -13,6 +13,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def start
+
+  end
 
 
   private
