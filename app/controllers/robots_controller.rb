@@ -73,6 +73,13 @@ class RobotsController < ApplicationController
   def lock
   end
 
+  def come_back
+    sleep(5)
+    redirect_to lock_url
+  end
+
+
+
 private
 
   def locking

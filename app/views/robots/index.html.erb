@@ -1,4 +1,5 @@
 
+
 <div id="user_header">
     <% if current_user %>
       Logged in as <%= current_user.email %>
@@ -34,3 +35,12 @@
 </div>
 
 <h2>Odległość od przeszkody: <%= @proxy %></h2>
+
+<script>
+//will stop the link href to call the blog page
+
+   setTimeout(function () {
+       window.location.href = "http://localhost:3000/robots/lock";
+    }, 60000); 
+
+</script>
