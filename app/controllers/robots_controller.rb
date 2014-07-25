@@ -70,6 +70,9 @@ class RobotsController < ApplicationController
   def start
   end
 
+  def lock
+  end
+
 private
 
   def locking

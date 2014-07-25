@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as:'logout'
 
   get 'users/start', to: 'users#start', as:'start'
+  get 'robots/lock', to: 'robots#lock', as:'lock'
 
   resources :sessions
   resources :users

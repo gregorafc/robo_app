@@ -1,5 +1,6 @@
 <h1>Rejestracja</h1>
 
+<div class="form">
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
@@ -27,3 +28,5 @@
 
   <div class="action"><%= f.submit "Rejestracja" %></div>
 <% end %>
+</div>
+
