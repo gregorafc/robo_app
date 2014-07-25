@@ -1,0 +1,36 @@
+
+<div id="user_header">
+    <% if current_user %>
+      Logged in as <%= current_user.email %>
+      <%= link_to "Wylogowanie", logout_path %>
+    <% else %>
+  <%= link_to "Rejestracja", signup_path %>
+  <%= link_to "Logowanie", login_path %>
+    <% end %>
+</div>
+
+<h1>Sterowanie robotem</h1>
+
+
+<div class='container'>
+  <div class='row no-space'>
+    <div class="col-xs-4"><%= link_to "Wolno do przodu", robots_slow_forward_path, :class =>'btn btn-lg btn-success btn-block' %></div>
+      <div class="col-xs-4"><%= link_to "Przód", robots_forward_path, :class =>'btn btn-lg btn-success btn-block' %></div>
+    <div class="col-xs-4"><%= link_to "Atak", robots_attack_path, :class =>'btn btn-lg btn-danger btn-block' %></div>
+  </div>
+
+  <div class='row'>
+      <div class="col-xs-4"><%= link_to "W lewo", robots_left_path, :class =>'btn btn-lg btn-success btn-block' %></div>
+      <div class="col-xs-4"><%= link_to "Ostrze", robots_run_path, :class =>'btn btn-lg btn-danger btn-block' %></div>
+      <div class="col-xs-4"><%= link_to "W prawo", robots_right_path, :class =>'btn btn-lg btn-success btn-block' %></div>
+  </div>
+
+  <div class='row'>
+      <div class="col-xs-4"><%= link_to "Wolno do tyłu", robots_slow_backward_path, :class =>'btn btn-lg btn-success btn-block' %></div>
+      <div class="col-xs-4"><%= link_to "Tył", robots_backward_path, :class =>'btn btn-lg btn-success btn-block' %></div>
+      <div class="col-xs-4"><%= link_to "Take control", robots_take_control_fwd_path, :class =>'btn btn-lg btn-info btn-block' %></div>
+  </div>
+
+</div>
+
+<h2>Odległość od przeszkody: <%= @proxy %></h2>
