@@ -3,7 +3,7 @@ class RobotsController < ApplicationController
   
   before_filter :authorize
 
-  before_action :locking
+  before_action :locking unless :locking?
 
 
   def index
@@ -73,18 +73,12 @@ class RobotsController < ApplicationController
   def lock
   end
 
-  def come_back
-    sleep(5)
-    redirect_to lock_url
-  end
-
-
 
 private
 
   def locking
-    @robo = Robot.new(PORT, API_ID)
-    @robo.lock
+      @robo = Robot.new(PORT, API_ID)
+      @robo.lock
   end
 
 end
